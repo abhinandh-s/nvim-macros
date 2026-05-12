@@ -1,9 +1,9 @@
-//! # Just Nvim
+//! # Nvim-Macros
 //! 
 //! ## Example 
 //!
 //! ```rust, ignore
-//! use just_nvim::nvim_set_hl;
+//! use nvim_macros::nvim_set_hl;
 //! use nvim_oxi::api::Error;
 //! use nvim_oxi::api::opts::SetHighlightOpts;
 //! 
