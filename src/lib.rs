@@ -96,6 +96,6 @@ macro_rules! nvim_set_hl {
         $(
             $crate::__hl_opt!(opts, $key = $val);
         )*
-            nvim_oxi::api::set_hl($ne_id, $name, &opts.build())
+            nvim_oxi::api::set_hl($ns_id, $name, &opts.build())
     }};
 }
