@@ -1,0 +1,42 @@
+[package]
+name = "nvim-macros"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+authors = ["Abhinandh S <abhinandhsuby@proton.me>"]
+description = "Collection of Neovim helper funtions/macros for nvim-oxi."
+homepage = "https://github.com/abhinandh-s/nvim-macros"
+categories = ["command-line-utilities"]
+keywords = ["tool", "utility"]
+
+[features]
+default = []
+
+[dependencies]
+nvim-oxi = { version = "0.6.0", features = ["neovim-nightly"] } # neovim 11 or nightly
+
+[lib]
+crate-type = ["rlib", "cdylib"]
+
+[profile.release]
+panic = 'abort'
+codegen-units = 1
+opt-level = 'z'
+lto = true
+debug = false
+strip = true
+debug-assertions = false
+overflow-checks = false
+incremental = false
+
+[lints.rust]
+unsafe_code = "forbid"
+unused_labels = "allow"
+
+[lints.clippy]
+unwrap_used = "warn"
+enum_glob_use = "deny"
+type_complexity = "deny"
+redundant_closure = "deny"
+str_to_string = "deny"
+case_sensitive_file_extension_comparisons = "deny"
